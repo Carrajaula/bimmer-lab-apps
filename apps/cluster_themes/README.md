@@ -184,3 +184,29 @@ If something looks wrong on your car, the last line of the Settings tab says wha
 See [Use at your own risk](../../README.md#use-at-your-own-risk) before installing.
 
 Version history is in the repo's [CHANGELOG.md](../../CHANGELOG.md).
+
+
+### S58 Race prototype
+
+A Rally-based theme inspired by the supplied red racing dash: a left-to-right
+segmented red RPM bar with a flat upper edge and curved lower edge, contrasting redline-aware scale markings,
+a large framed central gear and speed.
+Intake temperature and torque replace the G-meter/race-position area. Boost,
+fuel, coolant and oil form the right-hand readouts; all six slots are configurable.
+Select **S58 Race (prototype)** under Theme; for manual selection turn off the
+drive-mode switch. Select metric units for boost in bar and temperatures in °C.
+
+Generate the layout with `python3 tools/gen_s58_race.py` and validate it with
+`node tools/test_s58_race.js`. It extends Rally's arc with an opt-in `raceProfile`.
+Red is confined to the active RPM segments; the upper background stays black.
+The segments start tall on the left and taper toward the right, following the
+owner's sketch. The scale sits above the flat upper edge.
+It reuses the native box renderer; the RPM scale follows the configured redline (6/7/8 thousand max).
+No new vehicle provider or diagnostic command was added. Missing readings remain
+`--`. AFR, WGDC, rail/LPFP and MHD Active ethanol are not wired into this prototype.
+
+The bench uses synthetic signals and its build contains a stub BMW SDK: it is
+not an installable car package. The geometry and known exclusion regions are
+provisional, not calibrated G80 measurements. OEM warning visibility and return
+to the factory cluster still require stationary validation. No race-mode driver
+profile is selected automatically by this theme.

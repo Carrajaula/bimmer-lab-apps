@@ -42,6 +42,15 @@ const THEMES = {
     // frame), head (box header strip), ink (text on a header), accent (a highlighted header).
     // The car brightens dark tints (Nov 5 2026: a navy backdrop came out light steel blue), so until that curve
     // is measured every large area (bg, panel, well) is pure black in all the cluster themes.
+    s58_race: {
+        name: 'S58 Race',
+        fg: [244, 244, 244, 255], dim: [195, 199, 206, 255], track: [20, 22, 26, 255], arc: [244, 244, 244, 255],
+        glow: 0, stripe: false,
+        bar: { low: [235, 34, 46], mid: [255, 58, 65], high: [255, 42, 42], midAt: 'shift' },
+        rev: { from: [235, 34, 46], to: [235, 34, 46] },
+        bg: [0, 0, 0, 255], panel: [0, 0, 0, 255], line: [205, 208, 214, 255], head: [226, 228, 232, 255],
+        ink: [244, 244, 244, 255], accent: [235, 34, 46, 255], well: [0, 0, 0, 255], wellLine: [70, 74, 80, 255],
+    },
     gt3: {
         name: 'GT3',
         fg: [244, 244, 244, 255], dim: [150, 154, 160, 255], track: [255, 255, 255, 26], arc: [244, 244, 244, 255],

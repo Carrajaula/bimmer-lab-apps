@@ -1126,11 +1126,33 @@ uniform float u_highAt;
 uniform vec4 u_track;
 uniform float u_flash;
 uniform float u_wing;
+// Optional race profile: x start/end, flat top y, left-hand rise.
+uniform vec4 u_profile;
 
 const float PI = 3.14159265359;
 
 void main() {
-    vec2 d = v_uv * u_size - u_center;
+    vec2 p = v_uv * u_size;
+    vec2 d = p - u_center;
+    if (u_profile.y > u_profile.x) {
+        float span = u_profile.y - u_profile.x;
+        float t = clamp((p.x - u_profile.x) / span, 0.0, 1.0);
+        // Flat upper edge and rising lower edge: tall left segments taper toward the right.
+        if (p.x < u_profile.x || p.x >= u_profile.y) { gl_FragColor = vec4(0.0); return; }
+        float index = floor(t * u_segs);
+        float centreT = (index + 0.5) / u_segs;
+        float bottom = u_profile.z + u_profile.w * pow(1.0 - centreT, 4.0) + u_w;
+        float top = u_profile.z;
+        float within = mod(p.x - u_profile.x, span / u_segs);
+        if (within > span / u_segs - 4.0 || p.y < top || p.y > bottom) {
+            gl_FragColor = vec4(0.0); return;
+        }
+        bool lit = u_value > 0.0 && centreT <= u_value;
+        vec3 c = centreT < u_midAt ? u_low : (centreT < u_highAt ? u_mid : u_high);
+        if (lit && u_flash > 0.5) c = vec3(1.0);
+        gl_FragColor = lit ? vec4(c, 1.0) : u_track;
+        return;
+    }
     float rr = length(d);
     float inner = u_r - u_w;
     float edge = clamp(rr - inner + 0.5, 0.0, 1.0) * clamp(u_r - rr + 0.5, 0.0, 1.0);

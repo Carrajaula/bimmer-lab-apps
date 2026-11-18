@@ -45,8 +45,12 @@ Each app has its own page on the center screen, opened from the apps menu. Pick 
 
 ## Install
 
+This personal fork adds **S58 Race (prototype)** to Cluster Themes 0.19.1.
+Select that theme in the app after installation. Its bench preview is verified;
+G80 cluster fit and factory warning visibility still need stationary validation.
+
 1. Install **cluster-render** first. Both apps draw through it. It comes from the `robertnisipeanu/idrive-apps` Store source. With version 0.5.1 or newer, a cluster theme and a HUD layout can show at the same time.
-2. In the Store, go to **Settings, Add source**, enter **`bimmer-lab/apps`**, and install the apps you want.
+2. In the Store, go to **Settings, Add source**, enter **`Carrajaula/bimmer-lab-apps`**, and install the apps you want.
 3. Open the app from the apps menu on the center screen to pick a theme or layout.
 4. The head unit's clock runs on UTC, so set **Settings, Time zone (clock)** to your zone once (for example US Eastern). Named zones change for daylight saving by themselves.
 

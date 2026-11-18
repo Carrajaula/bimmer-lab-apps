@@ -1,8 +1,8 @@
 {
   "id": "cluster_themes",
   "title": "Cluster Themes",
-  "description": "Redraws the instrument cluster: GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer",
-  "version": "0.19.0",
+  "description": "Redraws the instrument cluster: S58 Race, GT3 race dash, M-style, M view, Vector (with a music panel), Sport, Minimal, Track, Drag, Rally, Retro 80s, Cruise, Dyno (BMW-coloured readout tiles) or Ribbon (with holiday editions), with shift lights, boost, temps, tyres, a G-meter and a 0-60 timer",
+  "version": "0.19.1",
   "vendor": "custom",
   "loggingId": "OAC1",
   "iconGlyph": "CLU",
@@ -125,6 +125,10 @@
           "GT3"
         ],
         [
+          "s58_race",
+          "S58 Race (prototype)"
+        ],
+        [
           "m",
           "M"
         ],
@@ -203,6 +207,10 @@
           "GT3"
         ],
         [
+          "s58_race",
+          "S58 Race (prototype)"
+        ],
+        [
           "m",
           "M"
         ],
@@ -267,6 +275,10 @@
           "GT3"
         ],
         [
+          "s58_race",
+          "S58 Race (prototype)"
+        ],
+        [
           "m",
           "M"
         ],
@@ -329,6 +341,10 @@
         [
           "gt3",
           "GT3"
+        ],
+        [
+          "s58_race",
+          "S58 Race (prototype)"
         ],
         [
           "m",

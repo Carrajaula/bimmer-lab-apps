@@ -2256,6 +2256,7 @@ class HudApp {
             const max = this._barMax(), red = this.setting('redline');
             const midAt = t.bar.midAt === 'shift' ? (red - 1500) / max : t.bar.midAt;
             c.uniform(ref, 'u_size', [w.w, w.h]);
+            c.uniform(ref, 'u_profile', w.raceProfile || [0, 0, 0, 0]);
             c.uniform(ref, 'u_center', w.center);
             c.uniform(ref, 'u_r', [w.r]);
             c.uniform(ref, 'u_w', [w.band || 40]);
